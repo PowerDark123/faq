@@ -1,17 +1,15 @@
 import React from "react";
-import { useState } from 'react';
+
+import { SingleQuestion } from "./SingleQuestion";
 
 export const Questions=({data,setData})=>{
-    console.log(data)
     return(
-        <>
-        <div className="row">
+        <div className="row justify-content-between">
                  {data.map((obj)=>(
-                    <h5>{obj.title} <input type="button" value="+" /> </h5>
+                    <SingleQuestion key={obj.id} title={obj.title} info={obj.info} />
         
              ))}
            
         </div>
-        </>
     )
 }
